@@ -5,9 +5,17 @@ var speed: float = 0
 var max_speed: float = 500
 
 
-@onready var sprite: Sprite2D = get_node("ShipArea/ShipSprite/ShieldSprite")
+@onready var shield_sprite: Sprite2D = get_node("ShipArea/ShipSprite/ShieldSprite")
 @onready var flame_sprite: Sprite2D = get_node("ShipArea/ShipSprite/FlameSprite")
+@onready var timer: Timer = Timer.new()
 @export var object_type: String = 'ship'
+
+
+func _ready() -> void:
+	add_child(timer)
+	timer.wait_time = 10.0
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout)
 
 
 func _process(delta: float) -> void:
@@ -45,4 +53,9 @@ func _process(delta: float) -> void:
 	
 	
 func damage():
-	sprite.visible = false
+	shield_sprite.visible = false
+	timer.start()
+
+
+func _on_timer_timeout():
+	shield_sprite.visible = true
