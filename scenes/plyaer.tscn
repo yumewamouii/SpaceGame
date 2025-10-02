@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://db3ba5n8nh0u2"]
+
+[ext_resource type="Script" uid="uid://c1a42sybicv8l" path="res://scripts/controlled.gd" id="1_l1bvv"]
+[ext_resource type="Texture2D" uid="uid://dsdxiwmkf5r3f" path="res://assets/ship1.png" id="1_y1hrs"]
+[ext_resource type="Texture2D" uid="uid://cepyn3coxkydf" path="res://assets/shield.png" id="2_jobb7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1bvv"]
+radius = 32.0
+height = 64.0
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_l1bvv")
+
+[node name="posiotionLaybel" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 32.0
+offset_bottom = -33.0
+
+[node name="shipArea" type="Area2D" parent="."]
+
+[node name="shipCollision" type="CollisionShape2D" parent="shipArea"]
+shape = SubResource("CapsuleShape2D_l1bvv")
+
+[node name="ShipSprite" type="Sprite2D" parent="shipArea"]
+texture = ExtResource("1_y1hrs")
+
+[node name="shield" type="Sprite2D" parent="shipArea/ShipSprite"]
+position = Vector2(-4.7683716e-07, 4.5474735e-13)
+scale = Vector2(1.2307692, 1.25)
+texture = ExtResource("2_jobb7")
