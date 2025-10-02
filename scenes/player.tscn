@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://db3ba5n8nh0u2"]
+[gd_scene load_steps=6 format=3 uid="uid://db3ba5n8nh0u2"]
 
 [ext_resource type="Script" uid="uid://c1a42sybicv8l" path="res://scripts/controlled.gd" id="1_l1bvv"]
 [ext_resource type="Texture2D" uid="uid://dsdxiwmkf5r3f" path="res://assets/ship1.png" id="1_y1hrs"]
 [ext_resource type="Texture2D" uid="uid://cepyn3coxkydf" path="res://assets/shield.png" id="2_jobb7"]
+[ext_resource type="Texture2D" uid="uid://c8emm3hk7q8ry" path="res://assets/flame.png" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1bvv"]
 radius = 32.0
@@ -29,3 +30,8 @@ texture = ExtResource("1_y1hrs")
 position = Vector2(-4.7683716e-07, 4.5474735e-13)
 scale = Vector2(1.2307692, 1.25)
 texture = ExtResource("2_jobb7")
+
+[node name="FlameSprite" type="Sprite2D" parent="ShipArea/ShipSprite"]
+position = Vector2(0, -30)
+rotation = 3.1415927
+texture = ExtResource("4_dqkch")

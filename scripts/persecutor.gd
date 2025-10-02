@@ -13,10 +13,6 @@ var velocity: Vector2 = Vector2(0,0)
 @onready var window = get_parent().get_window()
 
 
-# TODO: Add a light for the ship's engine,
-# so that the length of the light and its presence depend on the current speed.
-
-
 func apply_force(force: Vector2) -> void:
 	acceleration = force
 	
