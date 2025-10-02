@@ -33,4 +33,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	damaged.emit()
+	if area.find_parent('Player'):
+		damaged.emit()

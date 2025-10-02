@@ -30,6 +30,5 @@ func _process(delta: float) -> void:
 	position += speed * delta * Vector2(x,y).normalized()
 	
 	
-# FIXME: Fix a bug where if an enemy hits an asteroid, the player's shield breaks. 
 func damage():
 	sprite.visible = false
